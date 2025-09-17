@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JanSetu - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="logo">
+                <i class="fas fa-star"></i>
+                <span>logo</span>
+            </div>
+        </div>
+        
+        <div class="nav-center">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Submit Report</a></li>
+                <li><a href="#" class="nav-link">My Reports</a></li>
+                <li><a href="#" class="nav-link">Map View</a></li>
+                <li><a href="#" class="nav-link active">Admin Dashboard</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <button class="nav-btn notifications-btn">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </button>
+            <button class="nav-btn profile-btn">
+                <i class="fas fa-user"></i>
+                <span>User Profile</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Submit Report</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>My Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Map View</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="profile-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <span class="group-title">Quick Links</span>
+                        <a href="#">Resources</a>
+                        <a href="#">Legal</a>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="made-with">
+                    <p>Made with <i class="fas fa-heart"></i> by <strong>Visily</strong></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Admin Dashboard</h1>
+            </div>
+            
+            <!-- Statistics Overview -->
+            <div class="stats-overview">
+                <div class="stat-card total">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Complaints</span>
+                        <span class="stat-value">1,245</span>
+                        <span class="stat-description">Overall issues reported</span>
+                    </div>
+                    <div class="stat-actions">
+                        <button class="view-details-btn" data-type="total">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="stat-card pending">
+                    <div class="stat-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Pending Review</span>
+                        <span class="stat-value">320</span>
+                        <span class="stat-description">Issues awaiting action</span>
+                    </div>
+                    <div class="stat-actions">
+                        <button class="view-details-btn" data-type="pending">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="stat-card resolved">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Resolved Issues</span>
+                        <span class="stat-value">789</span>
+                        <span class="stat-description">Completed and closed</span>
+                    </div>
+                    <div class="stat-actions">
+                        <button class="view-details-btn" data-type="resolved">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="stat-card priority">
+                    <div class="stat-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">High Priority</span>
+                        <span class="stat-value">136</span>
+                        <span class="stat-description">Urgent attention required</span>
+                    </div>
+                    <div class="stat-actions">
+                        <button class="view-details-btn" data-type="priority">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Complaints Section -->
+            <div class="complaints-section">
+                <div class="section-header">
+                    <h2>Recent Complaints</h2>
+                    <button class="view-all-btn" id="viewAllBtn">View All</button>
+                </div>
+                
+                <!-- Filters and Search -->
+                <div class="table-controls">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search by ID, category, location...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <select id="statusFilter" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Resolved">Resolved</option>
+                        </select>
+                        
+                        <select id="priorityFilter" class="filter-select">
+                            <option value="">All Priority</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                        
+                        <button class="export-btn" id="exportBtn">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Complaints Table -->
+                <div class="table-container">
+                    <table class="complaints-table" id="complaintsTable">
+                        <thead>
+                            <tr>
+                                <th>Complaint ID</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Priority</th>
+                                <th>Location</th>
+                                <th>Reported On</th>
+                                <th>Assigned To</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        <span id="paginationInfo">Showing 1-10 of 1,245 complaints</span>
+                    </div>
+                    <div class="pagination-controls">
+                        <button class="pagination-btn" id="prevBtn" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="page-numbers" id="pageNumbers">
+                            <!-- Page numbers will be generated by JavaScript -->
+                        </div>
+                        <button class="pagination-btn" id="nextBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Complaint Details Modal -->
+    <div class="modal-overlay" id="detailsModal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Complaint Details</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="assignBtn">Assign</button>
+                <button class="btn btn-primary" id="updateStatusBtn">Update Status</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignment Modal -->
+    <div class="modal-overlay" id="assignModal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Assign Complaint</h2>
+                <button class="close-btn" id="closeAssignModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="assigneeSelect" class="form-label">Assign to:</label>
+                    <select id="assigneeSelect" class="form-select">
+                        <option value="">Select Team Member</option>
+                        <option value="Team A">Team A</option>
+                        <option value="Team B">Team B</option>
+                        <option value="Officer Singh">Officer Singh</option>
+                        <option value="N/A">Unassigned</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="assignmentNotes" class="form-label">Notes (Optional):</label>
+                    <textarea id="assignmentNotes" class="form-textarea" rows="3" placeholder="Add any notes for the assignee..."></textarea>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancelAssignBtn">Cancel</button>
+                <button class="btn btn-primary" id="confirmAssignBtn">Assign</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

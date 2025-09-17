@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JanSetu - Civic Issue Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="logo">
+                <i class="fas fa-star"></i>
+                <span>logo</span>
+            </div>
+        </div>
+        
+        <div class="nav-center">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link active">Submit Report</a></li>
+                <li><a href="#" class="nav-link">My Reports</a></li>
+                <li><a href="#" class="nav-link">Map View</a></li>
+                <li><a href="#" class="nav-link">Admin Dashboard</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <button class="nav-btn notifications-btn">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </button>
+            <button class="nav-btn profile-btn">
+                <i class="fas fa-user"></i>
+                <span>User Profile</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Submit Report</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>My Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Map View</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="profile-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <span class="group-title">Quick Links</span>
+                        <a href="#">Resources</a>
+                        <a href="#">Legal</a>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="made-with">
+                    <p>Made with <i class="fas fa-heart"></i> by <strong>Visily</strong></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Report a New Civic Issue</h1>
+            </div>
+            
+            <div class="content-body">
+                <form class="report-form" id="reportForm">
+                    <!-- Issue Details Section -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <i class="fas fa-clipboard-list"></i>
+                            <h2>Issue Details</h2>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category" class="form-label">Category</label>
+                            <select id="category" class="form-select" required>
+                                <option value="">Select an issue category</option>
+                                <option value="roads">Roads & Infrastructure</option>
+                                <option value="water">Water Supply</option>
+                                <option value="electricity">Electricity</option>
+                                <option value="waste">Waste Management</option>
+                                <option value="public-safety">Public Safety</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="education">Education</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea 
+                                id="description" 
+                                class="form-textarea" 
+                                placeholder="Please describe the civic issue, providing as much detail as possible (e.g., specific location, time, impact)..."
+                                rows="6"
+                                required
+                            ></textarea>
+                            <div class="char-counter">
+                                <span id="charCount">0</span>/1000 characters
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Attach Media Section -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <i class="fas fa-paperclip"></i>
+                            <h2>Attach Media</h2>
+                        </div>
+                        
+                        <div class="media-upload-container">
+                            <div class="upload-section">
+                                <h3>Upload Photos</h3>
+                                <div class="upload-area" id="photoUpload">
+                                    <div class="upload-icon">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <p>Drag 'n' drop some files here, or click to select files</p>
+                                    <input type="file" id="photoInput" multiple accept="image/*" hidden>
+                                </div>
+                                <div class="uploaded-files" id="uploadedPhotos"></div>
+                            </div>
+                            
+                            <div class="voice-section">
+                                <h3>Record Voice Note</h3>
+                                <div class="voice-recorder">
+                                    <div class="recorder-icon">
+                                        <i class="fas fa-microphone" id="micIcon"></i>
+                                    </div>
+                                    <p id="recordingStatus">Click to start recording voice message</p>
+                                    <button type="button" class="record-btn" id="recordBtn">
+                                        <i class="fas fa-microphone"></i>
+                                        <span>Start Recording</span>
+                                    </button>
+                                    <div class="recording-controls" id="recordingControls" style="display: none;">
+                                        <button type="button" class="control-btn stop-btn" id="stopBtn">
+                                            <i class="fas fa-stop"></i>
+                                        </button>
+                                        <div class="recording-timer" id="recordingTimer">00:00</div>
+                                    </div>
+                                    <audio id="audioPlayback" controls style="display: none;"></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Location Section -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h2>Location</h2>
+                        </div>
+                        
+                        <div class="location-container">
+                            <div class="map-placeholder" id="mapContainer">
+                                <div class="map-icon">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <p>Map view placeholder</p>
+                            </div>
+                            
+                            <div class="location-controls">
+                                <button type="button" class="location-btn" id="useCurrentLocation">
+                                    <i class="fas fa-crosshairs"></i>
+                                    <span>Use Current Location</span>
+                                </button>
+                                <div class="location-info" id="locationInfo" style="display: none;">
+                                    <p><strong>Selected Location:</strong></p>
+                                    <p id="locationText">No location selected</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span>Submit Complaint</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Report Submitted Successfully!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your civic issue report has been submitted and assigned tracking ID: <strong id="trackingId"></strong></p>
+                <p>You will receive updates on the progress of your report via notifications.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="viewReportsBtn">View My Reports</button>
+                <button class="btn btn-secondary" id="submitAnotherBtn">Submit Another Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
