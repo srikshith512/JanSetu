@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JanSetu - Your Gateway to Civic Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="logo">
+                <i class="fas fa-star"></i>
+                <span>JanSetu</span>
+            </div>
+        </div>
+        
+        <div class="nav-center">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">Login</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link">Services</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <button class="nav-btn help-btn">
+                <i class="fas fa-question-circle"></i>
+                <span>Help</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-section">
+                <div class="brand-logo">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h1 class="welcome-title">Welcome to JanSetu</h1>
+                <p class="welcome-subtitle">Your gateway to civic services in Jharkhand.</p>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="mobileNumber" class="form-label">Mobile Number</label>
+                    <div class="input-wrapper">
+                        <span class="country-code">🇮🇳</span>
+                        <input 
+                            type="tel" 
+                            id="mobileNumber" 
+                            class="form-input" 
+                            placeholder="Enter your 10-digit mobile number"
+                            maxlength="10"
+                            pattern="[0-9]{10}"
+                            required
+                        >
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="getOtpBtn">
+                    <span class="btn-text">Get OTP</span>
+                    <div class="loading-spinner" style="display: none;"></div>
+                </button>
+                
+                <div class="terms-section">
+                    <p class="terms-text">
+                        By proceeding, you agree to our 
+                        <a href="#" class="terms-link">Terms of Service</a> and 
+                        <a href="#" class="terms-link">Privacy Policy</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        
+        <!-- OTP Verification Modal -->
+        <div class="modal-overlay" id="otpModal" style="display: none;">
+            <div class="otp-modal">
+                <div class="modal-header">
+                    <h2>Verify OTP</h2>
+                    <button class="close-btn" id="closeOtpModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p class="otp-instruction">Enter the 6-digit OTP sent to <span id="displayMobile"></span></p>
+                    <div class="otp-inputs">
+                        <input type="text" class="otp-digit" maxlength="1" data-index="0">
+                        <input type="text" class="otp-digit" maxlength="1" data-index="1">
+                        <input type="text" class="otp-digit" maxlength="1" data-index="2">
+                        <input type="text" class="otp-digit" maxlength="1" data-index="3">
+                        <input type="text" class="otp-digit" maxlength="1" data-index="4">
+                        <input type="text" class="otp-digit" maxlength="1" data-index="5">
+                    </div>
+                    <div class="otp-actions">
+                        <button class="verify-btn" id="verifyOtpBtn">Verify OTP</button>
+                        <button class="resend-btn" id="resendOtpBtn">Resend OTP</button>
+                    </div>
+                    <div class="timer-section">
+                        <p class="timer-text">Resend OTP in <span id="timer">30</span> seconds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h2>Login Successful!</h2>
+            <p>Welcome to JanSetu Dashboard</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="link-group">
+                    <span class="group-title">Quick Links</span>
+                    <a href="#">Resources</a>
+                    <a href="#">Legal</a>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="made-with">
+                <p>Made with <i class="fas fa-heart"></i> by <strong>Visily</strong></p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JanSetu - My Complaints Overview</title>
+    <link rel="stylesheet" href="my-reports.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="logo">
+                <i class="fas fa-star"></i>
+                <span>logo</span>
+            </div>
+        </div>
+        
+        <div class="nav-center">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Submit Report</a></li>
+                <li><a href="#" class="nav-link active">My Reports</a></li>
+                <li><a href="#" class="nav-link">Map View</a></li>
+                <li><a href="#" class="nav-link">Admin Dashboard</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <button class="nav-btn notifications-btn">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </button>
+            <button class="nav-btn profile-btn">
+                <i class="fas fa-user"></i>
+                <span>User Profile</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Submit Report</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>My Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Map View</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="profile-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <span class="group-title">Quick Links</span>
+                        <a href="#">Resources</a>
+                        <a href="#">Legal</a>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="made-with">
+                    <p>Made with <i class="fas fa-heart"></i> by <strong>Visily</strong></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>My Complaints Overview</h1>
+            </div>
+            
+            <!-- Statistics Overview -->
+            <div class="stats-overview">
+                <div class="stat-card total">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Complaints</span>
+                        <span class="stat-value">6</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card pending">
+                    <div class="stat-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Pending</span>
+                        <span class="stat-value">2</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card progress">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">In Progress</span>
+                        <span class="stat-value">1</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card resolved">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Resolved</span>
+                        <span class="stat-value">2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Search and Filters -->
+            <div class="filters-section">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search by ID, description, or location...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                
+                <div class="filter-controls">
+                    <select id="statusFilter" class="filter-select">
+                        <option value="">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="resolved">Resolved</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                    
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="roads">Roads & Infrastructure</option>
+                        <option value="water">Water Supply</option>
+                        <option value="waste">Waste Management</option>
+                        <option value="electricity">Electricity</option>
+                        <option value="public-safety">Public Safety</option>
+                        <option value="drainage">Drainage System</option>
+                    </select>
+                    
+                    <button class="reset-filters-btn" id="resetFilters">
+                        <i class="fas fa-undo"></i>
+                        Reset Filters
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Reports Section -->
+            <div class="reports-section">
+                <h2>My Recent Reports</h2>
+                
+                <div class="reports-grid" id="reportsGrid">
+                    <!-- Report Card 1 -->
+                    <div class="report-card" data-status="pending" data-category="roads">
+                        <div class="report-image">
+                            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop" alt="Road Maintenance Issue">
+                        </div>
+                        <div class="report-content">
+                            <div class="report-header">
+                                <span class="status-badge pending">Pending</span>
+                                <span class="report-date">2024-07-20</span>
+                            </div>
+                            <h3 class="report-title">JH-2024-001: Road Maintenance</h3>
+                            <p class="report-description">Large potholes near Ranchi main market causing traffic jams and vehicle damage. Urgent repair needed.</p>
+                            <div class="report-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Ranchi Main Market</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 20%"></div>
+                                </div>
+                                <span class="progress-text">20%</span>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-secondary view-details" data-id="JH-2024-001">View Details</button>
+                                <button class="btn-primary update-report" data-id="JH-2024-001">Update Report</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Report Card 2 -->
+                    <div class="report-card" data-status="in-progress" data-category="waste">
+                        <div class="report-image">
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=250&fit=crop" alt="Waste Management Issue">
+                        </div>
+                        <div class="report-content">
+                            <div class="report-header">
+                                <span class="status-badge in-progress">In Progress</span>
+                                <span class="report-date">2024-07-19</span>
+                            </div>
+                            <h3 class="report-title">JH-2024-002: Waste Management</h3>
+                            <p class="report-description">Overflowing garbage bins in residential area. Strong odor and health hazard concerns.</p>
+                            <div class="report-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Sector 7, Residential</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span class="progress-text">60%</span>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-secondary view-details" data-id="JH-2024-002">View Details</button>
+                                <button class="btn-primary update-report" data-id="JH-2024-002">Update Report</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Report Card 3 -->
+                    <div class="report-card" data-status="resolved" data-category="water">
+                        <div class="report-image">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop" alt="Water Supply Issue">
+                        </div>
+                        <div class="report-content">
+                            <div class="report-header">
+                                <span class="status-badge resolved">Resolved</span>
+                                <span class="report-date">2024-07-18</span>
+                            </div>
+                            <h3 class="report-title">JH-2024-003: Water Supply</h3>
+                            <p class="report-description">Irregular water supply in Dhanbad for the past week. Residents facing severe inconvenience.</p>
+                            <div class="report-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dhanbad Sector 7</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-secondary view-details" data-id="JH-2024-003">View Details</button>
+                                <button class="btn-primary update-report" data-id="JH-2024-003">Update Report</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Report Card 4 -->
+                    <div class="report-card" data-status="closed" data-category="electricity">
+                        <div class="report-image">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="Electricity Outage">
+                        </div>
+                        <div class="report-content">
+                            <div class="report-header">
+                                <span class="status-badge closed">Closed</span>
+                                <span class="report-date">2024-07-17</span>
+                            </div>
+                            <h3 class="report-title">JH-2024-004: Electricity Outage</h3>
+                            <p class="report-description">Frequent power outages in Bokaro, especially during peak evenings. Affecting daily life and local businesses.</p>
+                            <div class="report-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bokaro Steel City</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-text">100%</span>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-secondary view-details" data-id="JH-2024-004">View Details</button>
+                                <button class="btn-primary update-report" data-id="JH-2024-004">Update Report</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Report Card 5 -->
+                    <div class="report-card" data-status="rejected" data-category="public-safety">
+                        <div class="report-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop" alt="Public Safety Issue">
+                        </div>
+                        <div class="report-content">
+                            <div class="report-header">
+                                <span class="status-badge rejected">Rejected</span>
+                                <span class="report-date">2024-07-16</span>
+                            </div>
+                            <h3 class="report-title">JH-2024-005: Public Safety</h3>
+                            <p class="report-description">Non-functional streetlights on the main road of Hazaribagh, increasing risk of accidents and crime.</p>
+                            <div class="report-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hazaribagh Main Road</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">0%</span>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-secondary view-details" data-id="JH-2024-005">View Details</button>
+                                <button class="btn-primary update-report" data-id="JH-2024-005">Update Report</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Report Card 6 -->
+                    <div class="report-card" data-status="pending" data-category="drainage">
+                        <div class="report-image">
+                            <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=250&fit=crop" alt="Drainage System Issue">
+                        </div>
+                        <div class="report-content">
+                            <div class="report-header">
+                                <span class="status-badge pending">Pending</span>
+                                <span class="report-date">2024-07-15</span>
+                            </div>
+                            <h3 class="report-title">JH-2024-006: Drainage System</h3>
+                            <p class="report-description">Blocked drainage system in Giridih leading to waterlogging during monsoons. Creating unhygienic conditions.</p>
+                            <div class="report-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Giridih Market Area</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 10%"></div>
+                                </div>
+                                <span class="progress-text">10%</span>
+                            </div>
+                            <div class="report-actions">
+                                <button class="btn-secondary view-details" data-id="JH-2024-006">View Details</button>
+                                <button class="btn-primary update-report" data-id="JH-2024-006">Update Report</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <div class="no-results-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>No reports found</h3>
+                    <p>Try adjusting your search criteria or filters</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Report Details Modal -->
+    <div class="modal-overlay" id="detailsModal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Report Details</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="my-reports.js"></script>
+</body>
+</html>

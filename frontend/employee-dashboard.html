@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JanSetu - Employee Dashboard</title>
+    <link rel="stylesheet" href="employee-dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <div class="logo">
+                <i class="fas fa-star"></i>
+                <span>logo</span>
+            </div>
+        </div>
+        
+        <div class="nav-center">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Submit Report</a></li>
+                <li><a href="#" class="nav-link">My Reports</a></li>
+                <li><a href="#" class="nav-link">Map View</a></li>
+                <li><a href="#" class="nav-link">Admin Dashboard</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav-right">
+            <button class="nav-btn notifications-btn">
+                <i class="fas fa-bell"></i>
+                <span>Notifications</span>
+            </button>
+            <button class="nav-btn profile-btn">
+                <i class="fas fa-user"></i>
+                <span>User Profile</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Submit Report</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-file-alt"></i>
+                            <span>My Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Map View</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="profile-btn">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <span class="group-title">Quick Links</span>
+                        <a href="#">Resources</a>
+                        <a href="#">Legal</a>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+                <div class="made-with">
+                    <p>Made with <i class="fas fa-heart"></i> by <strong>Visily</strong></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Employee Dashboard</h1>
+            </div>
+            
+            <!-- Statistics Overview -->
+            <div class="stats-overview">
+                <div class="stat-card total">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Complaints</span>
+                        <span class="stat-value">1,234</span>
+                        <span class="stat-description">Overall issues reported</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card pending">
+                    <div class="stat-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Pending</span>
+                        <span class="stat-value">345</span>
+                        <span class="stat-description">Issues awaiting action</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card progress">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">In Progress</span>
+                        <span class="stat-value">210</span>
+                        <span class="stat-description">Issues being processed</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card resolved">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Resolved</span>
+                        <span class="stat-value">679</span>
+                        <span class="stat-description">Issues completed</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <h2>Filter Complaints</h2>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <input type="text" id="searchInput" class="filter-input" placeholder="Search by ID/Keyword">
+                    </div>
+                    <div class="filter-group">
+                        <select id="locationFilter" class="filter-select">
+                            <option value="">Select Location</option>
+                            <option value="Ranchi">Ranchi</option>
+                            <option value="Jamshedpur">Jamshedpur</option>
+                            <option value="Dhanbad">Dhanbad</option>
+                            <option value="Bokaro">Bokaro</option>
+                            <option value="Hazaribagh">Hazaribagh</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="">Select Category</option>
+                            <option value="Road Repair">Road Repair</option>
+                            <option value="Sanitation">Sanitation</option>
+                            <option value="Water Supply">Water Supply</option>
+                            <option value="Electricity">Electricity</option>
+                            <option value="Public Safety">Public Safety</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="priorityFilter" class="filter-select">
+                            <option value="">Select Priority</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="statusFilter" class="filter-select">
+                            <option value="">Select Status</option>
+                            <option value="Pending">Pending</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Resolved">Resolved</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+                    <div class="filter-actions">
+                        <button class="apply-filters-btn" id="applyFilters">Apply Filters</button>
+                        <button class="clear-filters-btn" id="clearFilters">Clear Filters</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>Complaints by Category</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Complaints by Status</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Complaints Table -->
+            <div class="table-section">
+                <h2>Recent Complaints</h2>
+                <div class="table-container">
+                    <table class="complaints-table" id="complaintsTable">
+                        <thead>
+                            <tr>
+                                <th>COMPLAINT ID</th>
+                                <th>CATEGORY</th>
+                                <th>LOCATION</th>
+                                <th>PRIORITY</th>
+                                <th>STATUS</th>
+                                <th>ASSIGNED TO</th>
+                                <th>DATE</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        <span>Previous</span>
+                        <span class="page-numbers">
+                            <span class="page-number active">1</span>
+                            <span class="page-number">2</span>
+                            <span class="page-number">...</span>
+                        </span>
+                        <span>Next</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Action Modal -->
+    <div class="modal-overlay" id="actionModal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Complaint Actions</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <div class="action-buttons">
+                    <button class="action-btn view-btn" id="viewBtn">
+                        <i class="fas fa-eye"></i>
+                        View Details
+                    </button>
+                    <button class="action-btn assign-btn" id="assignBtn">
+                        <i class="fas fa-user-plus"></i>
+                        Assign
+                    </button>
+                    <button class="action-btn update-btn" id="updateBtn">
+                        <i class="fas fa-edit"></i>
+                        Update Status
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="employee-dashboard.js"></script>
+</body>
+</html>
